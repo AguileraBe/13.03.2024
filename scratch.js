@@ -108,6 +108,21 @@ function girarHorario() {
     console.log("Ângulo do avatar depois: ", anguloAvatar + "deg");
 }
 
+function girarAntihorario() {
+    console.clear();
+    console.log("Ângulo do avatar antes: ", anguloAvatar + "deg");
+    if (anguloAvatar > anguloInicial) {
+        anguloAvatar -= parseInt(txtPixel.value);
+        if (anguloAvatar < anguloInicial) {
+            anguloAvatar = anguloInicial;
+        }
+        imgAvatar.style.transform = "rotate(" + anguloAvatar + "deg)";
+    } else {
+        console.error("Ops! Chegou ao limite e não é possível mais girar no sentido anti-horário. Tente outro botão.");
+    }
+    console.log("Ângulo do avatar depois: ", anguloAvatar + "deg");
+}
+
 function deslizar() {
     var posicaoAtual = parseInt(imgAvatar.style.left) || 0;
     var novaPosicao = posicaoAtual + 1000;
